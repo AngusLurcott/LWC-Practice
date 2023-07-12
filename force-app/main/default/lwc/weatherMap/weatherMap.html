@@ -1,0 +1,25 @@
+<template>
+    
+    <input type="text" placeholder="Enter a longtitude" value={longInput} oninput={handleLongInput} />
+    <input type="text" placeholder="Enter a lattitude" value={latInput} oninput={handleLatInput} />
+
+
+    <button onclick={handleSubmit}>Get Weather</button>
+
+    <template if:true={showWeather}>
+
+        <div>
+            <p> Temperature at {longInput} , {latInput}: </p>
+            <ul>
+                <template for:each={temperatureData} for:item="temp">
+                    <li key={temp}>{temp}</li>
+                </template>
+            </ul>
+        </div>
+
+        <span> </span>
+
+
+
+    </template>
+</template>
